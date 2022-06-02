@@ -110,6 +110,23 @@ public class ResTest {
 
       }
       Assert.assertTrue(hasListEntryFlag_513253);
+      // Require response to be a JSONArray
+      Assert.assertTrue(response instanceof JSONArray);
+      // Cast response to JSONArray
+      JSONArray array357577 = (JSONArray) response;
+      boolean hasListEntryFlag_357577 = false;
+      for(Object listItem : array357577) {
+              // Require listItem to be a JSONObject
+      Assert.assertTrue(listItem instanceof JSONObject);
+      // Cast listItem to JSONObject
+      JSONObject object997305 = (JSONObject) listItem;
+      // Assert that field x exists
+      Assert.assertTrue(object997305.containsKey("x"));
+      Object object997305_2 = object997305.get("x");
+      Assert.assertTrue(object997305_2 instanceof JSONObject);
+
+      }
+      Assert.assertTrue(hasListEntryFlag_357577);
 
       System.out.println("Result of 'test$HTTP_Method_Name$': " + result.getResponse().trim());
     } catch (Exception e) {
